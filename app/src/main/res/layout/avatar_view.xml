@@ -11,13 +11,15 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        tools:src="@drawable/ic_account_box_black_24dp" />
+        tools:src="@drawable/ic_account_box_black_24dp"
+        android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/tvSate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="online" />
+        tools:text="online"
+        android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/tvName"
@@ -25,5 +27,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
         android:textSize="20sp"
-        tools:text="User Name" />
+        tools:text="User Name"
+        android:layout_gravity="center_horizontal"/>
 </merge>

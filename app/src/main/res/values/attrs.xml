@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AvatarView">
-        <attr name="headerText" format="string|reference" />
+        <attr name="userName" format="string|reference" />
+        <attr name="isOnline" format="boolean" />
+        <attr name="icon" format="reference"/>
     </declare-styleable>
 </resources>

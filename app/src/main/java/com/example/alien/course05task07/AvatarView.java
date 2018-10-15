@@ -1,6 +1,8 @@
 package com.example.alien.course05task07;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -26,15 +28,32 @@ public class AvatarView extends LinearLayout {
     }
 
     private void init(Context context, AttributeSet attrs) {
+        setOrientation(VERTICAL);
         View view = inflate(context, R.layout.avatar_view, this);
 
         mIvImage = view.findViewById(R.id.ivImage);
         mTvUserName = view.findViewById(R.id.tvName);
         mTvState = view.findViewById(R.id.tvSate);
+
+        TypedArray mainTypedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AvatarView, 0, R.style.DefaultAvatarView);
+        String userName = mainTypedArray.getString(R.styleable.AvatarView_userName);
+        setUserName(userName);
+
+        boolean isOnline = mainTypedArray.getBoolean(R.styleable.AvatarView_isOnline, false);
+        setState(isOnline);
+
+        Drawable icon = mainTypedArray.getDrawable(R.styleable.AvatarView_icon);
+        setImage(icon);
+
+        mainTypedArray.recycle();
     }
 
-    public void setImage(@DrawableRes int resId) {
-        mIvImage.setImageResource(resId);
+    public void setImage(Drawable drawable) {
+        if (drawable != null) {
+            mIvImage.setImageDrawable(drawable);
+        } else {
+            mIvImage.setImageResource(R.drawable.ic_account_box_black_24dp);
+        }
     }
 
     public void setUserName(CharSequence name) {
@@ -43,6 +62,7 @@ public class AvatarView extends LinearLayout {
 
     public void setState(boolean isOnline) {
         mTvState.setText(isOnline ? R.string.online : R.string.offline);
+
     }
 //    public AvatarView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
 //        super(context, attrs, defStyleAttr);

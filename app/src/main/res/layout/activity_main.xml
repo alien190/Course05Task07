@@ -5,11 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <com.example.alien.course05task07.AvatarView
+        android:layout_margin="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </com.example.alien.course05task07.AvatarView>
+        android:layout_height="wrap_content"
+        app:userName="First User"
+        app:isOnline = "false"/>
+
+    <com.example.alien.course05task07.AvatarView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:userName="Second User"
+        app:isOnline = "true"
+        app:icon="@drawable/second_user_avatar"/>
 
 </LinearLayout>

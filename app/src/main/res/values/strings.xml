@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Course05Task07</string>
-    <string name="online">on-line</string>
-    <string name="offline">off-line</string>
+    <string name="online">в сети</string>
+    <string name="offline">не в сети</string>
 </resources>
